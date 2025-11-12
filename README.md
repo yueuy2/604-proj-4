@@ -11,3 +11,6 @@ Historical"metered" data: https://dataminer2.pjm.com/feed/hrl_load_metered
 - Predict which hour of the day will have the peak load (the "peak hour"): for each day and each region, dene the "peak hour" as the hour with the maximum load (for that day
 and region). If your prediction is correct, +/- one hour; simple approach not necessarily optimal.
 - Predict which days will have maximum peak loads (the "peak days")
+
+
+https://www.kaggle.com/code/robikscube/starter-hourly-energy-consumption/comments
