@@ -1,0 +1,32 @@
+# Configuration for Power Grid Forecasting
+
+# Data settings
+data:
+  filepath: "data/sample_data.csv"
+  test_size: 0.2  # 20% for testing
+  
+# Model settings
+models:
+  arima:
+    enabled: true
+    order: [5, 1, 2]  # (p, d, q)
+  
+  lstm:
+    enabled: true
+    sequence_length: 24
+    units: 50
+    epochs: 50
+  
+  moving_average:
+    enabled: true
+    window: 24
+
+# Forecast settings
+forecast:
+  horizon: 168  # Number of hours to forecast (1 week)
+
+# Visualization settings
+visualization:
+  generate_plots: true
+  plot_seasonal_patterns: true
+  plot_residuals: true
