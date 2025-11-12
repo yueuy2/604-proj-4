@@ -47,7 +47,7 @@ class DataLoader:
             DataFrame with synthetic power consumption data
         """
         # Generate timestamps (hourly for one year)
-        timestamps = pd.date_range(start='2024-01-01', periods=n_samples, freq='H')
+        timestamps = pd.date_range(start='2024-01-01', periods=n_samples, freq='h')
         
         # Base load with daily and seasonal patterns
         hours = np.arange(n_samples)

@@ -104,6 +104,10 @@ class LSTMModel:
             from tensorflow.keras import layers
             from sklearn.preprocessing import MinMaxScaler
             
+            # Check if we have enough data
+            if len(train_data) < self.sequence_length + 10:
+                raise ValueError(f"Insufficient data for LSTM. Need at least {self.sequence_length + 10} samples, got {len(train_data)}")
+            
             print(f"Training LSTM model with {self.units} units...")
             
             # Scale the data
@@ -112,6 +116,9 @@ class LSTMModel:
             
             # Create sequences
             X, y = self._create_sequences(scaled_data)
+            
+            if len(X) == 0:
+                raise ValueError(f"No sequences created. Data length: {len(train_data)}, Sequence length: {self.sequence_length}")
             
             # Reshape for LSTM [samples, time steps, features]
             X = X.reshape((X.shape[0], X.shape[1], 1))

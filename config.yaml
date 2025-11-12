@@ -13,9 +13,9 @@ models:
   
   lstm:
     enabled: true
-    sequence_length: 24
+    sequence_length: 12  # Reduced for smaller datasets
     units: 50
-    epochs: 50
+    epochs: 30
   
   moving_average:
     enabled: true
